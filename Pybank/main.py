@@ -9,10 +9,26 @@ csvpath = os.path.join('Resources', 'budget_data.csv')
 with open(csvpath, "r") as f:
 
 #csvfile reader with delimiter
-    reader = csv.reader(f, delimiter=",")
-    print(reader)
+    csv_reader = csv.reader(f, delimiter=",")
+    
+    #skipping the header
+    next(f)
 
-    # count row since each data set is unique, starting at 2nd row
-    data = list(reader)
-    RowCount = len(data)
-    print(RowCount)
+    #making iteration for line count ---print outdented with the for statement to print complete total
+    LineCount = 0
+    TotalSum = 0
+    for line in f:
+        #print(line)
+        LineCount = LineCount + 1
+        TotalSum = sum + line[1]
+    print(LineCount)
+    print(TotalSum)
+
+            
+    
+
+
+    # render object to list 
+    #RowList = list(reader)
+    
+
