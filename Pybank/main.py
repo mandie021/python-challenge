@@ -67,14 +67,41 @@ for i in range(len(AvMonChangelist)):
         AmoGdecrease = AvMonChangelist[i]
 #print(AmoGdecrease)
 #print(MoGincrease)
-
+txtpath = os.path.join('Analysis', 'Analysis.txt')
 #to print the text to terminal
-print("Financial Analysis")
-print("----------------------")
-print(f'Total Months:  {TotalMonths}')
-print(f'Total Profits/Losses:  {TotalProfits}')
-print(f'Greatest Increase in Profits:  {MonGincrease}  {(AmoGincrease)}')
-print(f'Greatest Decrease in Profits:  {MonGdecrease}  {(AmoGdecrease)}')
+output= (
+   f"Financial Analysis\n"
+   f"----------------------------\n"
+   f"Total Months: {TotalMonths}\n"
+   f"Total: ${TotalProfits}\n"
+   f"Average  Change: ${ProfitAverage:.2f}\n"
+   f"Greatest Increase in Profits: {MonGincrease} (${AmoGincrease})\n"
+   f"Greatest Decrease in Profits: {MonGdecrease} (${AmoGdecrease})\n")
 
-    
+print(output)
 
+with open(txtpath, "w+") as txtfile:
+    txtfile.write(output)
+
+# print("Financial Analysis")
+# print("----------------------")
+# print(f'Total Months:  {TotalMonths}')
+# print(f'Total Profits/Losses:  {TotalProfits}')
+# print(f'Greatest Increase in Profits:  {MonGincrease}  {(AmoGincrease)}')
+# print(f'Greatest Decrease in Profits:  {MonGdecrease}  {(AmoGdecrease)}')
+
+#print to txt file
+
+
+# line1 = "Financial Analysis"
+# line2 = "----------------------"
+# line3 = (f'Total Months:  {TotalMonths}')
+# line4 = (f'Total Profits/Losses:  {TotalProfits}')
+# line5 = (f'Greatest Increase in Profits:  {MonGincrease}  {(AmoGincrease)}')
+# line6 = (f'Greatest Decrease in Profits:  {MonGdecrease}  {(AmoGdecrease)}')
+
+# printlines = (f'{line1}' '\n' f'{line2}' '\n' '{line3}' '\n' f'{line4}' '\n' f'{line5}' '\n' f'{line6}')
+# with open(txtpath, 'w+') as txtfile:
+#     for line in txtfile:
+#         txtfile.write(printlines)
+#     txtfile.close()
