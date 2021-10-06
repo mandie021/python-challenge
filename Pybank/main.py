@@ -46,12 +46,35 @@ for i in range(len(profitlist)):
         AvMonChangelist.append(MonChange)
         PrvMonAmount = profitlist[i]
 
-#print monthly changes
+#print(MonChange)
 Duration = len(AvMonChangelist)
 total = sum(AvMonChangelist)
 ProfitAverage = total/Duration
 #print(ProfitAverage)
 
 #finding min max and corrisponding month
+MonGincrease = ''
+AmoGincrease = 0
+MonGdecrease = ''
+AmoGdecrease = 0
 
+for i in range(len(AvMonChangelist)):
+    if AvMonChangelist [i] > AmoGincrease:
+        AmoGincrease = AvMonChangelist[i]
+        MonGincrease = monthlist[i +1]
+    elif AvMonChangelist[i] < AmoGdecrease:
+        MonGdecrease = monthlist[i +1]
+        AmoGdecrease = AvMonChangelist[i]
+#print(AmoGdecrease)
+#print(MoGincrease)
+
+#to print the text to terminal
+print("Financial Analysis")
+print("----------------------")
+print(f'Total Months:  {TotalMonths}')
+print(f'Total Profits/Losses:  {TotalProfits}')
+print(f'Greatest Increase in Profits:  {MonGincrease}  {(AmoGincrease)}')
+print(f'Greatest Decrease in Profits:  {MonGdecrease}  {(AmoGdecrease)}')
+
+    
 
